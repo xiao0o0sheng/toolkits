@@ -1,0 +1,42 @@
+[user]
+    name = 
+    email = 
+
+[init]
+    defaultBranch = main                                # 新仓库默认分支名（替代 master）
+
+
+[core]
+    editor = nvim
+    
+    # 需要安装 git-delta
+    # brew install git-delta
+    pager = delta                                       # 将默认分页器(less)用 delta 替代，支持语法高亮，并排对比和更清晰的代码块标记
+    
+    filemode = true                                     # 记录文件权限变更（Unix 为 true）
+    excludesfile = ~/.config/git/gitignore_global       # 全局忽略规则文件路径
+
+
+[interactive]
+    diffFilter = delta --color-only                     # 在交互式操作中，用 delta 过滤 diff 输出， --color-only     仅渲染颜色修改内容
+
+[delta]
+    navigate = true                                     # 快捷键导航，n: 下一个变更块， N: 上一个变更块
+    dark = true                                         # 强制使用暗色主题
+
+[merge]
+    conflictStyle = zdiff3                              # 改进合并冲突的显示格式
+
+
+[alias]
+    st = status -sb                                     # 简洁状态：git st
+    co = checkout                                       # 快捷切换分支：git co main
+    br = branch                                         # 列出分支：git br
+    ci = commit                                         # 提交：git ci -m "message"
+    amend = commit --amend --no-edit                    # 修正上次提交（不修改消息）
+    lg = log --graph --oneline --decorate               # 可视化日志
+    undo = reset HEAD~1                                 # 撤销上次提交（保留更改）
+    wip = commit -am "WIP"                              # 快速保存工作进度
+
+
+
