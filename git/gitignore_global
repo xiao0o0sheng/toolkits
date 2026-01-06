@@ -22,12 +22,12 @@ $RECYCLE.BIN/
 
 # --- 开发环境文件 ---
 # 通用
-*.log
-*.tmp
-*.bak
+**/*.log
+**/*.tmp
+**/*.bak
 dist/
 build/
-**/logs/
+**/*logs*/
 .env                # 环境变量（敏感信息）
 
 # --- 语言/框架相关 ---
