@@ -6,10 +6,9 @@
 # @Software:        Neovim 0.12.0
 # @Author:          xiao0o0sheng
 # @Email:           xiaosheng7@126.com
-# @Version:         
-# @Description:     
+# @Version:
+# @Description:
 # -----------------------------------------------------------------
-
 
 
 import logging
@@ -131,7 +130,9 @@ class Logger:
 
 if __name__ == "__main__":
     print("=== 测试：控制台 INFO，文件 DEBUG ===")
-    logger = Logger.create_logger("test_logger", console_level=Logger.INFO, file_level=Logger.DEBUG)
+    logger = Logger.create_logger(
+        "test_logger", console_level=Logger.INFO, file_level=Logger.DEBUG
+    )
 
     print("控制台级别: INFO (只显示INFO及以上)")
     print("文件级别: DEBUG (记录DEBUG及以上)")
@@ -155,6 +156,3 @@ if __name__ == "__main__":
     logger.info("INFO信息 - ❌ 控制台不显示，✅ 文件记录")
     logger.warning("WARNING信息 - ❌ 控制台不显示，✅ 文件记录")
     logger.error("ERROR信息 - ✅ 控制台显示，✅ 文件记录")
-
-
-
