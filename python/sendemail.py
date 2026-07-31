@@ -49,10 +49,8 @@ def zip_file(file_path, output_path):
 
 def cmd_line():
     default_account = {
-        #'user': '1654968922@qq.com',
-        #'pwd': 'wtppqhbrtzhgbdca',
-        'user': 'xiaosheng7@126.com',
-        'pwd': 'SFNWXUAXYZQADVRM',
+        'user': '16*******2@qq.com',
+        'pwd': 'wtczpp*******bdcfsda'
     }
 
     parser = argparse.ArgumentParser(description='=====>>> 参数释义 <<<=====')
@@ -134,7 +132,7 @@ class Email:
         self.pwd = pwd
         if self.user.split('@')[-1] in smtpserver:
             self.host = smtpserver[self.user.split('@')[-1]]
-            self.port = 587
+            self.port = 465
         else:
             host = input('请输入smtp服务器地址(q退出):')
             if host == 'q':
@@ -152,8 +150,8 @@ class Email:
         self.title = title
         self.text = text
         self.attachment = attachment
-        # 打印接收到的 邮件信息
-        # print(f'User: {self.user}, PWD: {self.pwd}, Host: {self.host}, Port: {self.port}, Receiver: {self.receiver}, CC: {self.cc}, BCC: {self.bcc}, Title: {self.title}, Text: {self.text}, Attachment: {self.attachment}')
+        print(self.user, self.pwd, self.host, self.port, self.receiver, self.cc, self.bcc, self.title, self.text,
+              self.attachment)
 
     def set_msg(self):
         # 创建邮件实体
